@@ -18,7 +18,7 @@
     .skip:focus { top: 12px; }
     header { position: sticky; top: 0; z-index: 10; background: rgba(251,250,248,.97); border-bottom: 1px solid var(--line); }
     .topbar { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: baseline; gap: 2px; color: var(--ink); font-weight: 800; font-size: 19px; text-decoration: none; }
+    .brand { display: inline-flex; align-items: baseline; gap: 8px; color: var(--ink); font-weight: 800; font-size: 19px; letter-spacing: -.02em; text-decoration: none; }
     .brand img { height: 14px; width: auto; }
     .topbar nav { display: flex; gap: 24px; align-items: center; font-size: 14px; }
     .topbar nav a { color: var(--soft); text-decoration: none; }
@@ -94,7 +94,7 @@
   <a class="skip" href="#main">Skip to architecture</a>
   <header>
     <div class="shell topbar">
-      <a class="brand" href="index.html" aria-label="DoubleSlash home">D://</a>
+      <a class="brand" href="index.html" aria-label="DoubleSlash home"><img src="logo.svg" alt="" /><span>DoubleSlash</span></a>
       <nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="architecture.html" aria-current="page">Architecture</a><a class="source-nav" href="https://github.com/ConquerD/ConquerD">Source code</a></nav>
     </div>
   </header>
