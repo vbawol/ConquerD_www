@@ -109,20 +109,16 @@
 
     .brand {
       display: inline-flex;
-      align-items: baseline;
-      gap: 0.42em;
-      color: var(--ink);
-      font-size: 1.08rem;
-      font-weight: 780;
-      letter-spacing: -0.035em;
+      align-items: center;
       text-decoration: none;
     }
 
-    /* The mark is the D:// protocol glyph and leads the wordmark. It is sized
-       to cap height and sits on the text baseline (an image's baseline is its
-       bottom edge, which is also the bottom of the D glyph in logo.svg). */
+    /* logo-full.svg is the entire lockup - the red D:// mark and the DoubleSlash
+       wordmark - so the brand link carries no text of its own. 1.25rem holds the
+       D at the cap height it had as live text (0.72em of 1.08rem), grown by the
+       90/56 of vertical padding the SVG keeps around that cap height. */
     .brand img {
-      height: 0.72em;
+      height: 1.25rem;
       width: auto;
       object-fit: contain;
     }
@@ -1380,7 +1376,7 @@
   <header class="site-header">
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="DoubleSlash home">
-        <img src="logo.svg" alt="" /><span>DoubleSlash</span>
+        <img src="logo-full.svg" alt="DoubleSlash" />
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
@@ -1875,7 +1871,7 @@
     <div class="shell footer-row">
       <div>
         <a class="brand" href="#top" aria-label="DoubleSlash home">
-          <img src="logo.svg" alt="" /><span>DoubleSlash</span>
+          <img src="logo-full.svg" alt="DoubleSlash" />
         </a>
         <p class="footer-copy">Open-source, invite-only peer connectivity. MIT licensed.</p>
       </div>
