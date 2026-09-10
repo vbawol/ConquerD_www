@@ -8,7 +8,7 @@
 |---|---|
 | `index.html` | All public page content, metadata, inline diagrams, and small interaction scripts |
 | `styles.css` | Site layout, typography, responsive behavior, and visual styling |
-| `logo.svg`, `logo-full.svg`, `conquerd.ico` | Brand assets |
+| `logo.svg`, `logo-full.svg`, `logo.png`, `logo_padding.png`, `favicon.ico` | Brand assets (the D:// mark) |
 | `CNAME` | Custom-domain configuration |
 | `README.md` | Legacy website notes; not an architecture or product source of truth |
 | `agents-www.md` | This website-specific working contract |
@@ -34,6 +34,7 @@ Avoid freezing test totals, capability totals, or other fast-changing counts int
 ### Product and trust model
 
 - DoubleSlash is a privacy-first, modular peer-connectivity framework with a native Rust Qt/QML desktop client. The invite/portal protocol is branded D:// (`d://` URLs; legacy `conquerd://` is still accepted).
+- The rename from ConquerD is user-facing only. Do not rewrite identifiers that peers agree on: crate names (`conquerd-client`, `conquerd-features`, …), the QUIC TLS server name, HKDF labels, `window.conquerd`, `/_conquerd/channel/*`, `x.conquerd.*` capability ids, and the legacy `conquerd://` scheme. Quote them verbatim in copy; `rust/conquerd-features/src/brand.rs` is the source of truth for the names that did change.
 - Identity, discovery, and presence are client-owned. There is no first-party account or identity backend.
 - Peers connect through signed invites and an authenticated handshake using Ed25519 identities.
 - Cross-peer behavior is capability-negotiated. First-party UI is a consumer of feature modules, not a bypass around them.
@@ -70,9 +71,9 @@ Avoid freezing test totals, capability totals, or other fast-changing counts int
 - Portal content uses `web.host.app.v1` over an identity-authenticated QUIC bidirectional stream.
 - Multiplayer game traffic uses `game.relay.v1` over identity QUIC relay datagrams with fixed tag `0x05`.
 - Built-in portal examples include cursor sharing, brick relay, and shared drawing.
-- Hosted pages use the `window.conquerd` bridge and `/_conquerd/channel/*` endpoints.
+- Hosted pages use the `window.conquerd` bridge and `/_conquerd/channel/*` endpoints. The desktop client also aliases the bridge as `window.doubleslash`, but `window.conquerd` remains the primary name.
 - There is no public HTTP or WebTransport game surface. Do not mention `web.host.h3.v1`, `web_port`, public game TLS certificates or fingerprints, or `webtransport.rs` as current architecture.
-- Use “browser game” only when the copy makes clear that HTML/JavaScript runs inside ConquerD's native in-app portal, not in an arbitrary external browser.
+- Use “browser game” only when the copy makes clear that HTML/JavaScript runs inside DoubleSlash's native in-app portal, not in an arbitrary external browser.
 
 ### Capability catalogue
 
@@ -96,7 +97,7 @@ Every feature has an authentication tier and quota policy. Third-party `x.<vendo
 
 ## Remaining Website Documentation Drift
 
-The local website `README.md` describes the retired Python application, eight-participant rooms, peer-to-peer source updates, and a Nodes-tab UI. Do not copy those claims into `index.html`; updating that legacy file is a separate documentation task.
+The local website `README.md` describes the retired Python application, eight-participant rooms, peer-to-peer source updates, and a Nodes-tab UI. It now carries a historical banner, but its body still uses the pre-rename brand and stale claims. Do not copy those claims into `index.html`; rewriting or retiring that legacy file is a separate documentation task.
 
 ## Agent Roles
 
