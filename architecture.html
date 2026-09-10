@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DoubleSlash Architecture | Identity, Transport &amp; Trust</title>
   <meta name="description" content="Inside DoubleSlash: client-owned identity, capability-negotiated QUIC connections, opaque supernode relays, and end-to-end encrypted rooms." />
-  <link rel="icon" href="conquerd.ico" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     :root { color-scheme: light; --ink: #11131a; --soft: #434957; --muted: #616775; --paper: #fbfaf8; --line: #dedfe3; --brand: #474cc7; --green: #11684e; --red: #b22d40; --max: 1180px; }
     *, *::before, *::after { box-sizing: border-box; }
@@ -148,7 +148,7 @@
           <p class="lead">A shared drawing surface and a multiplayer game have similar connectivity needs: load an interface, identify the participants, join a session, and exchange updates. DoubleSlash separates the hosted interface from the peer data path, so those building blocks can also support collaborative tools and node-specific portals without introducing a central account service.</p>
           <div class="layers">
             <div class="layer"><h3>Host the interface</h3><p><code>web.host.app.v1</code> serves HTML, CSS, JavaScript, and assets from the supernode's <code>web/</code> and <code>games/</code> directories. The native client's embedded Chromium loads them through <code>d://</code>, using QUIC bidirectional request/response streams. This hosts an interface; it does not provide an application database.</p></div>
-            <div class="layer"><h3>Use the native bridge</h3><p><code>window.conquerd.ready</code> supplies the local peer identity, supernode identity, and portal APIs. Channel open, send, poll, and close operations use the authenticated relay connection through <code>/_conquerd/channel/*</code>. Portal fetches reach the hosting node without a separate public HTTP endpoint.</p></div>
+            <div class="layer"><h3>Use the native bridge</h3><p><code>window.conquerd.ready</code> supplies the local peer identity, supernode identity, and portal APIs. The desktop client also exposes the same object as <code>window.doubleslash</code>, but <code>window.conquerd</code> remains the primary name for hosted pages to target. Channel open, send, poll, and close operations use the authenticated relay connection through <code>/_conquerd/channel/*</code>. Portal fetches reach the hosting node without a separate public HTTP endpoint.</p></div>
             <div class="layer"><h3>Exchange session updates</h3><p>The current <code>ConquerdClient</code> JavaScript SDK opens a named session and sends bytes through <code>game.relay.v1</code>. Cursor positions, drawing previews, and game-state updates can share this opaque datagram fan-out. The relay routes bytes; the application defines their meaning.</p></div>
             <div class="layer"><h3>Add a distinct contract</h3><p>A new cross-peer service belongs in an explicit <code>x.&lt;vendor&gt;.*</code> capability, with its own version, authentication tier, consent, and quotas. The Rust framework supports request, stream, and datagram features. Registering a module does not automatically expose it to JavaScript: a consumer and any required bridge integration must also be implemented.</p></div>
           </div>
@@ -178,6 +178,7 @@
         <section id="code">
           <div class="section-no">08 / Implementation</div><h2>Three workspaces. Clear ownership.</h2>
           <div class="layers"><div class="layer"><a href="https://github.com/ConquerD/ConquerD/tree/develop/rust/conquerd-client"><code>conquerd-client</code></a><p>Separate desktop workspace. Qt / QML connects through CXX-Qt models and AppBridge to ConnectionManager, local stores, and media pipelines. Headless builds support tests.</p></div><div class="layer"><a href="https://github.com/ConquerD/ConquerD/tree/develop/rust"><code>rust/</code></a><p>The outer workspace contains the shared features registry, supernode, installer, and first-party Opus and VP8 wrappers. The installer handles release download, verification, and application.</p></div><div class="layer"><a href="https://github.com/ConquerD/ConquerD/tree/develop/rust/conquerd-supernode-manager"><code>conquerd-supernode-manager</code></a><p>Separate operations workspace. Inventory, SSH transport, provisioning, cluster configuration, and a CLI / terminal dashboard. It is not an identity backend.</p></div></div>
+          <p class="note">The product is DoubleSlash and new invite and portal links are minted as <code>d://</code>, but identifiers that peers agree on are deliberately unchanged by the rename: crate names, the QUIC TLS server name, HKDF labels, the <code>window.conquerd</code> bridge, <code>/_conquerd/channel/*</code>, <code>x.conquerd.*</code> capability ids, and the legacy <code>conquerd://</code> scheme, which is accepted on parse so existing invites keep working. Renaming any of those would split the network.</p>
         </section>
         <section id="status">
           <div class="section-no">09 / Current state</div><h2>Implemented does not mean finished everywhere.</h2>
