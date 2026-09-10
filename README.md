@@ -5,8 +5,8 @@
 > do not treat it as a source of truth for current product behavior.
 >
 > Current website: [doubleslash.space](https://doubleslash.space) ·
-> Current documentation: [`README.md`](https://github.com/ConquerD/ConquerD/blob/develop/README.md)
-> and [`agents.md`](https://github.com/ConquerD/ConquerD/blob/develop/agents.md) in the main repository.
+> Current documentation: [`README.md`](https://github.com/ConquerD/DoubleSlash/blob/develop/README.md)
+> and [`agents.md`](https://github.com/ConquerD/DoubleSlash/blob/develop/agents.md) in the main repository.
 
 Conquerd is a privacy-first peer-to-peer voice and chat application. Identity, discovery, and trust live entirely on your device — there is no central server, no account, no sign-up. Peers connect through cryptographically signed invite links and communicate directly over encrypted QUIC channels.
 
