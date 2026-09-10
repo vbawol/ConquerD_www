@@ -121,6 +121,14 @@
       height: 1.25rem;
       width: auto;
       object-fit: contain;
+      /* The wordmark gradient starts at #ffffff - it is drawn for the dark app
+         window - so "Double" would vanish against --paper / --surface. The first
+         shadow is a zero-offset halo that puts an edge on every side of the
+         glyphs; the second is a soft cast that lifts the whole lockup off the
+         page. Raise the halo's alpha for more bite, lower it for less outline. */
+      filter:
+        drop-shadow(0 0 0.6px rgba(17, 19, 26, 0.55))
+        drop-shadow(0 1px 1.5px rgba(17, 19, 26, 0.2));
     }
 
     .nav-links,
