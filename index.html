@@ -114,11 +114,11 @@
     }
 
     /* logo-full.svg is the entire lockup - the red D:// mark and the DoubleSlash
-       wordmark - so the brand link carries no text of its own. 1.25rem holds the
-       D at the cap height it had as live text (0.72em of 1.08rem), grown by the
-       90/56 of vertical padding the SVG keeps around that cap height. */
+       wordmark - so the brand link carries no text of its own. 2.25rem is the
+       display size of the 90-tall viewBox; the D itself occupies 56 of those
+       units, so the letter sits at about 1.4rem in the 72px header. */
     .brand img {
-      height: 1.25rem;
+      height: 2.25rem;
       width: auto;
       object-fit: contain;
       /* The wordmark gradient starts at #ffffff - it is drawn for the dark app
