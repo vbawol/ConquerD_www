@@ -1,18 +1,16 @@
-<svg viewBox="0 0 486 90" fill="none"
+<svg class="wordmark-svg" viewBox="0 0 486 90" fill="none"
      xmlns="http://www.w3.org/2000/svg"
      role="img" aria-label="DoubleSlash://">
   <defs>
-    <!-- Gradient: ink → brand indigo. The Qt build of this mark runs white →
-         purple against a dark window; this site is light (--paper / --surface),
-         so the ramp is inverted to stay legible on it. -->
+    <!-- Gradient: white → purple, matching the site h1 -->
     <linearGradient id="wm-grad" x1="54" y1="0" x2="398" y2="0"
                     gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#11131a"/>
-      <stop offset="100%" stop-color="#5b61e6"/>
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
     </linearGradient>
   </defs>
 
-  <!-- ════ RED LETTER: D (icon-mark pentagon, same shape as logo.svg) ════ -->
+  <!-- ════ RED LETTER: D (icon-mark pentagon, same shape as icons/logo.svg) ════ -->
   <path fill-rule="evenodd" clip-rule="evenodd" fill="#FF2B40" d="
     M0,17 L36,17 L48,45 L36,73 L0,73 Z
     M11,28 L28,28 L37,45 L28,62 L11,62 Z
