@@ -1,8 +1,8 @@
-# ConquerD Website Agent Contract
+# DoubleSlash Website Agent Contract
 
 ## Overview
 
-`ConquerD_www/` is the static public website for ConquerD. It is currently a single-page site with no application backend, package manager, framework, or build step.
+`ConquerD_www/` is the static public website for DoubleSlash (doubleslash.space). It is currently a single-page site with no application backend, package manager, framework, or build step.
 
 | File | Purpose |
 |---|---|
@@ -33,7 +33,7 @@ Avoid freezing test totals, capability totals, or other fast-changing counts int
 
 ### Product and trust model
 
-- ConquerD is a privacy-first, modular peer-connectivity framework with a native Rust Qt/QML desktop client.
+- DoubleSlash is a privacy-first, modular peer-connectivity framework with a native Rust Qt/QML desktop client. The invite/portal protocol is branded D:// (`d://` URLs; legacy `conquerd://` is still accepted).
 - Identity, discovery, and presence are client-owned. There is no first-party account or identity backend.
 - Peers connect through signed invites and an authenticated handshake using Ed25519 identities.
 - Cross-peer behavior is capability-negotiated. First-party UI is a consumer of feature modules, not a bypass around them.
@@ -66,7 +66,7 @@ Avoid freezing test totals, capability totals, or other fast-changing counts int
 
 ### In-app portal and games
 
-- Portal pages and games load only in the native client through `conquerd://`.
+- Portal pages and games load only in the native client through `d://`.
 - Portal content uses `web.host.app.v1` over an identity-authenticated QUIC bidirectional stream.
 - Multiplayer game traffic uses `game.relay.v1` over identity QUIC relay datagrams with fixed tag `0x05`.
 - Built-in portal examples include cursor sharing, brick relay, and shared drawing.

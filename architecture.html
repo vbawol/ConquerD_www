@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConquerD Architecture | Identity, Transport &amp; Trust</title>
-  <meta name="description" content="Inside ConquerD: client-owned identity, capability-negotiated QUIC connections, opaque supernode relays, and end-to-end encrypted rooms." />
+  <title>DoubleSlash Architecture | Identity, Transport &amp; Trust</title>
+  <meta name="description" content="Inside DoubleSlash: client-owned identity, capability-negotiated QUIC connections, opaque supernode relays, and end-to-end encrypted rooms." />
   <link rel="icon" href="conquerd.ico" />
   <style>
     :root { color-scheme: light; --ink: #11131a; --soft: #434957; --muted: #616775; --paper: #fbfaf8; --line: #dedfe3; --brand: #474cc7; --green: #11684e; --red: #b22d40; --max: 1180px; }
@@ -94,14 +94,14 @@
   <a class="skip" href="#main">Skip to architecture</a>
   <header>
     <div class="shell topbar">
-      <a class="brand" href="index.html" aria-label="ConquerD home">Conquer<img src="logo.svg" alt="D" /></a>
+      <a class="brand" href="index.html" aria-label="DoubleSlash home">D://</a>
       <nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="architecture.html" aria-current="page">Architecture</a><a class="source-nav" href="https://github.com/ConquerD/ConquerD">Source code</a></nav>
     </div>
   </header>
   <main id="main" class="shell">
     <div class="intro">
       <div class="kicker">Technical reference / 01</div>
-      <h1>ConquerD architecture</h1>
+      <h1>DoubleSlash architecture</h1>
       <p>Identity lives on the device. Connections are negotiated between peers. Supernodes help move the bytes, without becoming the authority behind the conversation.</p>
       <div class="meta"><span>Rust + Qt / QML</span><span>QUIC transport</span><span>Invite-only trust</span><span>Reviewed <time datetime="2026-09-06">06 September 2026</time></span></div>
     </div>
@@ -145,9 +145,9 @@
         </section>
         <section id="apps">
           <div class="section-no">05 / Hosted experiences</div><h2>Games are one consumer. Apps can use the same foundations.</h2>
-          <p class="lead">A shared drawing surface and a multiplayer game have similar connectivity needs: load an interface, identify the participants, join a session, and exchange updates. ConquerD separates the hosted interface from the peer data path, so those building blocks can also support collaborative tools and node-specific portals without introducing a central account service.</p>
+          <p class="lead">A shared drawing surface and a multiplayer game have similar connectivity needs: load an interface, identify the participants, join a session, and exchange updates. DoubleSlash separates the hosted interface from the peer data path, so those building blocks can also support collaborative tools and node-specific portals without introducing a central account service.</p>
           <div class="layers">
-            <div class="layer"><h3>Host the interface</h3><p><code>web.host.app.v1</code> serves HTML, CSS, JavaScript, and assets from the supernode's <code>web/</code> and <code>games/</code> directories. The native client's embedded Chromium loads them through <code>conquerd://</code>, using QUIC bidirectional request/response streams. This hosts an interface; it does not provide an application database.</p></div>
+            <div class="layer"><h3>Host the interface</h3><p><code>web.host.app.v1</code> serves HTML, CSS, JavaScript, and assets from the supernode's <code>web/</code> and <code>games/</code> directories. The native client's embedded Chromium loads them through <code>d://</code>, using QUIC bidirectional request/response streams. This hosts an interface; it does not provide an application database.</p></div>
             <div class="layer"><h3>Use the native bridge</h3><p><code>window.conquerd.ready</code> supplies the local peer identity, supernode identity, and portal APIs. Channel open, send, poll, and close operations use the authenticated relay connection through <code>/_conquerd/channel/*</code>. Portal fetches reach the hosting node without a separate public HTTP endpoint.</p></div>
             <div class="layer"><h3>Exchange session updates</h3><p>The current <code>ConquerdClient</code> JavaScript SDK opens a named session and sends bytes through <code>game.relay.v1</code>. Cursor positions, drawing previews, and game-state updates can share this opaque datagram fan-out. The relay routes bytes; the application defines their meaning.</p></div>
             <div class="layer"><h3>Add a distinct contract</h3><p>A new cross-peer service belongs in an explicit <code>x.&lt;vendor&gt;.*</code> capability, with its own version, authentication tier, consent, and quotas. The Rust framework supports request, stream, and datagram features. Registering a module does not automatically expose it to JavaScript: a consumer and any required bridge integration must also be implemented.</p></div>
@@ -167,7 +167,7 @@
         <section id="media">
           <div class="section-no">06 / Content paths</div><h2>Different media. Deliberate delivery.</h2>
           <div class="twocol"><div><h3>Voice</h3><p>Opus audio travels over QUIC datagrams. Room voice can fall back to signed WebSocket messages. Room audio is end-to-end sealed; active-speaker forwarding uses packet arrival, not decoded sound.</p></div><div><h3>Video</h3><p>VP8 is available across platforms; Windows also supports Media Foundation H.264. Direct calls negotiate a codec. Room senders select a codec and stamp each frame. Room video has no WebSocket fallback.</p></div><div><h3>Shared audio &amp; synchronization</h3><p>A session clock timestamps video and shared audio together. Audio-led playout holds or drops video to synchronize it; video without a current audio anchor free-runs. Shared audio follows the viewed video, independently of voice mute.</p></div><div><h3>Files are offered, then pulled</h3><p>Room file offers contain metadata, not an automatic upload. An accepting member requests chunks from the originator, which sends only to that recipient. Large transfers stream from disk without compression; the supernode stores no file copy.</p></div></div>
-          <p class="note">The in-app portal is not this public website. Hosted pages load inside the native client through <code>conquerd://</code> and <code>web.host.app.v1</code>. Games use <code>window.conquerd</code> and the authenticated channel bridge, not a public browser transport.</p>
+          <p class="note">The in-app portal is not this public website. Hosted pages load inside the native client through <code>d://</code> and <code>web.host.app.v1</code>. Games use <code>window.conquerd</code> and the authenticated channel bridge, not a public browser transport.</p>
         </section>
         <section id="cluster">
           <div class="section-no">07 / State &amp; operations</div><h2>Durable on clients. Ephemeral on relays.</h2>
@@ -188,6 +188,6 @@
       </article>
     </div>
   </main>
-  <footer><div class="shell footer-inner"><span>ConquerD / Architecture reference</span><a href="index.html">Back to ConquerD</a><a href="https://github.com/ConquerD/ConquerD/blob/develop/PRIVACY.md">Privacy disclosures</a></div></footer>
+  <footer><div class="shell footer-inner"><span>DoubleSlash / Architecture reference</span><a href="index.html">Back to DoubleSlash</a><a href="https://github.com/ConquerD/ConquerD/blob/develop/PRIVACY.md">Privacy disclosures</a></div></footer>
 </body>
 </html>

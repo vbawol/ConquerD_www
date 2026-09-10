@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>ConquerD &ndash; Private Communication, Without the Platform</title>
+  <title>DoubleSlash &ndash; Private Communication, Without the Platform</title>
   <meta
     name="description"
-    content="ConquerD is invite-only voice, chat, rooms, files, and in-app games over direct or relayed QUIC, with identity that stays on your device."
+    content="DoubleSlash is invite-only voice, chat, rooms, files, and in-app games over the D:// protocol, with identity that stays on your device."
   />
-  <link rel="icon" href="conquerd.ico" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     :root {
       --ink: #11131a;
@@ -110,7 +110,7 @@
     .brand {
       display: inline-flex;
       align-items: baseline;
-      gap: 0.07em;
+      gap: 0.42em;
       color: var(--ink);
       font-size: 1.08rem;
       font-weight: 780;
@@ -118,8 +118,8 @@
       text-decoration: none;
     }
 
-    /* The mark stands in for the final "D" of the wordmark, so it is sized to
-       cap height and sits on the text baseline (an image's baseline is its
+    /* The mark is the D:// protocol glyph and leads the wordmark. It is sized
+       to cap height and sits on the text baseline (an image's baseline is its
        bottom edge, which is also the bottom of the D glyph in logo.svg). */
     .brand img {
       height: 0.72em;
@@ -1379,8 +1379,8 @@
 
   <header class="site-header">
     <div class="shell nav">
-      <a class="brand" href="#top" aria-label="ConquerD home">
-        <span>Conquer</span><img src="logo.svg" alt="" />
+      <a class="brand" href="#top" aria-label="DoubleSlash home">
+        <img src="logo.svg" alt="" /><span>DoubleSlash</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
@@ -1463,7 +1463,7 @@
           <p class="eyebrow">A smaller trust surface</p>
           <h2>Everything you need. Less infrastructure to trust.</h2>
           <p class="section-lede">
-            ConquerD keeps identity and room ownership with participants while optional
+            DoubleSlash keeps identity and room ownership with participants while optional
             supernodes help when networks or group features need them.
           </p>
         </div>
@@ -1557,15 +1557,15 @@
         <div class="steps">
           <article class="step">
             <h3>Create your identity</h3>
-            <p>ConquerD generates an Ed25519 identity locally and stores key material through the OS keyring.</p>
+            <p>DoubleSlash generates an Ed25519 identity locally and stores key material through the OS keyring.</p>
           </article>
           <article class="step">
             <h3>Share a signed invite</h3>
-            <p>Send a timestamped, expiry-checked <code>conquerd://</code> invite through a channel you already trust.</p>
+            <p>Send a timestamped, expiry-checked <code>d://</code> invite through a channel you already trust.</p>
           </article>
           <article class="step">
             <h3>Use the best available path</h3>
-            <p>ConquerD negotiates capabilities and connects directly or through an optional supernode you choose.</p>
+            <p>DoubleSlash negotiates capabilities and connects directly or through an optional supernode you choose.</p>
           </article>
         </div>
       </div>
@@ -1637,12 +1637,12 @@
           <article class="bento-card large">
             <h3>Web experiences, inside the native trust boundary</h3>
             <p>
-              Portal pages load through <code>conquerd://</code> over an authenticated
+              Portal pages load through <code>d://</code> over an authenticated
               QUIC stream. Games use the native <code>window.conquerd</code> bridge and
               opaque <code>game.relay.v1</code> datagrams—there is no public game server.
             </p>
             <div class="portal-window" aria-label="Illustrative in-app portal">
-              <div class="portal-bar">conquerd://supernode-id/games/</div>
+              <div class="portal-bar">d://supernode-id/games/</div>
               <div class="portal-grid">
                 <div class="portal-tile">Cursor<br />Relay</div>
                 <div class="portal-tile">Brick<br />Breaker</div>
@@ -1706,7 +1706,7 @@
           <p class="eyebrow">Where the project stands</p>
           <h2>Honest status, not a launch page.</h2>
           <p class="section-lede">
-            ConquerD is pre-release software built in public. Here is the short
+            DoubleSlash is pre-release software built in public. Here is the short
             version — <a href="architecture.html#status">see the architecture page for the full breakdown</a>.
           </p>
         </div>
@@ -1716,7 +1716,7 @@
             <p class="status-tag shipped">Working today</p>
             <h3>Shipped in the client</h3>
             <ul class="status-list">
-              <li>Local Ed25519 identity and signed <code>conquerd://</code> invites</li>
+              <li>Local Ed25519 identity and signed <code>d://</code> invites</li>
               <li>Direct chat and voice, with a fallback to a temporary private room</li>
               <li>Rooms for up to 32 people: voice, chat, and files, sealed end to end</li>
               <li>Supernode clusters that keep a room alive if one node goes down</li>
@@ -1765,7 +1765,7 @@
 
         <div class="faq">
           <details>
-            <summary>Does ConquerD operate an account or identity server?</summary>
+            <summary>Does DoubleSlash operate an account or identity server?</summary>
             <p>
               No. Identities are generated and stored locally. Optional supernodes can
               assist with relay, membership, rooms, and hosted features, but they are not
@@ -1800,12 +1800,12 @@
             <summary>Can I use the portal or games in a normal web browser?</summary>
             <p>
               No. Portal pages and games run inside the native client through
-              <code>conquerd://</code> and the authenticated identity QUIC path. The
+              <code>d://</code> and the authenticated identity QUIC path. The
               portal is intentionally not exposed as a public browser surface.
             </p>
           </details>
           <details>
-            <summary>Why would I need access to a ConquerD supernode?</summary>
+            <summary>Why would I need access to a DoubleSlash supernode?</summary>
             <p>
               You may not — two peers with open firewalls connect directly over QUIC.
               When that is not possible, a supernode gives you connectivity without
@@ -1816,7 +1816,7 @@
           <details>
             <summary>What happens when a direct connection fails?</summary>
             <p>
-              ConquerD works down an ordered list of fallbacks, ending with a chosen
+              DoubleSlash works down an ordered list of fallbacks, ending with a chosen
               supernode's QUIC relay. Direct calls also have a temporary private-room
               fallback while a direct path keeps trying to connect.
             </p>
@@ -1827,6 +1827,18 @@
               Tagged releases use an Ed25519-signed release manifest plus archive hash
               verification. The rolling nightly channel uses SHA-256 sidecars and an
               intentionally unsigned development manifest.
+            </p>
+          </details>
+          <details>
+            <summary>Wasn't this called ConquerD?</summary>
+            <p>
+              Yes. The project is now DoubleSlash, and the invite and portal protocol is
+              D:// — new links are minted as <code>d://</code>. Nothing on the wire
+              changed: existing <code>conquerd://</code> invites keep working, the client
+              still registers the old scheme with your operating system, and identities,
+              trusted peers, and saved rooms carry over. Some internal names
+              (crates, the portal bridge, relay paths) intentionally still read
+              <code>conquerd</code> so the network stays compatible.
             </p>
           </details>
         </div>
@@ -1862,8 +1874,8 @@
   <footer class="site-footer">
     <div class="shell footer-row">
       <div>
-        <a class="brand" href="#top" aria-label="ConquerD home">
-          <span>Conquer</span><img src="logo.svg" alt="" />
+        <a class="brand" href="#top" aria-label="DoubleSlash home">
+          <img src="logo.svg" alt="" /><span>DoubleSlash</span>
         </a>
         <p class="footer-copy">Open-source, invite-only peer connectivity. MIT licensed.</p>
       </div>
