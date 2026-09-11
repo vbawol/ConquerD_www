@@ -305,290 +305,6 @@
       font-weight: 800;
     }
 
-    .product-stage {
-      position: relative;
-      padding: 1.1rem 0 1.7rem;
-    }
-
-    .product-stage::before {
-      content: "";
-      position: absolute;
-      inset: 7% -4% -2% 9%;
-      border-radius: 34px;
-      background: linear-gradient(135deg, #e7e8ff, #f7e9ee);
-      transform: rotate(3deg);
-    }
-
-    .app-window {
-      position: relative;
-      overflow: hidden;
-      min-height: 510px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 24px;
-      background: #161922;
-      color: #f6f7fa;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .app-bar {
-      min-height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1rem;
-      border-bottom: 1px solid #292d39;
-      background: #1d202a;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 0.38rem;
-    }
-
-    .window-dots i {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #4a4e5b;
-    }
-
-    .window-dots i:first-child {
-      background: #ff6373;
-    }
-
-    .window-dots i:nth-child(2) {
-      background: #f6c356;
-    }
-
-    .window-dots i:last-child {
-      background: #4fc996;
-    }
-
-    .app-title {
-      color: #aeb4c2;
-      font-size: 0.72rem;
-      font-weight: 650;
-      letter-spacing: 0.04em;
-    }
-
-    .app-mode {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: #8fe2bd;
-      font-size: 0.68rem;
-      font-weight: 700;
-    }
-
-    .app-mode::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4fc996;
-    }
-
-    .app-body {
-      min-height: 456px;
-      display: grid;
-      grid-template-columns: 178px 1fr;
-    }
-
-    .app-sidebar {
-      padding: 1rem 0.75rem;
-      border-right: 1px solid #292d39;
-      background: #1a1d26;
-    }
-
-    .side-label {
-      margin: 0.75rem 0.6rem 0.38rem;
-      color: #777e8e;
-      font-size: 0.58rem;
-      font-weight: 760;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .side-row {
-      display: flex;
-      align-items: center;
-      gap: 0.58rem;
-      padding: 0.52rem 0.6rem;
-      border-radius: 8px;
-      color: #bfc4d1;
-      font-size: 0.69rem;
-      font-weight: 620;
-    }
-
-    .side-row.active {
-      background: #303449;
-      color: #fff;
-    }
-
-    .avatar {
-      width: 24px;
-      height: 24px;
-      display: grid;
-      flex: 0 0 auto;
-      place-items: center;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #6f75ee, #a88be6);
-      color: #fff;
-      font-size: 0.58rem;
-      font-weight: 780;
-    }
-
-    .avatar.green {
-      background: linear-gradient(135deg, #239a70, #52c89c);
-    }
-
-    .avatar.red {
-      background: linear-gradient(135deg, #d74456, #ff7a89);
-    }
-
-    .conversation {
-      min-width: 0;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      background:
-        radial-gradient(circle at 78% 15%, rgba(91, 97, 230, 0.12), transparent 38%),
-        #161922;
-    }
-
-    .conversation-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid #292d39;
-    }
-
-    .conversation-head strong {
-      display: block;
-      font-size: 0.82rem;
-    }
-
-    .conversation-head small {
-      color: #858c9c;
-      font-size: 0.64rem;
-    }
-
-    .call-button {
-      padding: 0.42rem 0.65rem;
-      border: 1px solid #3a3f4e;
-      border-radius: 8px;
-      background: #252936;
-      color: #d8dbe4;
-      font-size: 0.66rem;
-      font-weight: 720;
-    }
-
-    .messages {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 0.75rem;
-      padding: 1.2rem 1rem;
-    }
-
-    .message {
-      width: fit-content;
-      max-width: 80%;
-      padding: 0.62rem 0.75rem;
-      border-radius: 10px 10px 10px 3px;
-      background: #262a35;
-      color: #d8dbe5;
-      font-size: 0.69rem;
-      line-height: 1.4;
-    }
-
-    .message.mine {
-      align-self: flex-end;
-      border-radius: 10px 10px 3px 10px;
-      background: #555bd8;
-      color: #fff;
-    }
-
-    .message-meta {
-      display: block;
-      margin-top: 0.25rem;
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 0.53rem;
-      text-align: right;
-    }
-
-    .composer {
-      margin: 0 1rem 1rem;
-      padding: 0.7rem 0.8rem;
-      border: 1px solid #303543;
-      border-radius: 10px;
-      background: #20232d;
-      color: #747b8c;
-      font-size: 0.65rem;
-    }
-
-    .security-toast {
-      position: absolute;
-      right: -18px;
-      bottom: -6px;
-      width: 220px;
-      padding: 0.85rem 0.9rem;
-      border: 1px solid rgba(22, 138, 98, 0.18);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 18px 48px rgba(20, 24, 38, 0.18);
-    }
-
-    .security-toast strong {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.25rem;
-      color: var(--green);
-      font-size: 0.76rem;
-    }
-
-    .security-toast p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.67rem;
-      line-height: 1.45;
-    }
-
-    .trust-strip {
-      padding: 1.1rem 0 4.6rem;
-    }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.58);
-    }
-
-    .trust-row > span:first-child {
-      margin-right: 0.4rem;
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 660;
-    }
-
-    .trust-pill {
-      padding: 0.45rem 0.7rem;
-      border-radius: 999px;
-      background: var(--surface);
-      color: var(--ink-soft);
-      box-shadow: 0 3px 10px rgba(20, 24, 38, 0.05);
-      font-size: 0.72rem;
-      font-weight: 670;
-    }
-
     .section {
       padding: 6.5rem 0;
     }
@@ -619,56 +335,6 @@
       margin-bottom: 0;
       color: var(--muted);
       font-size: 1.06rem;
-    }
-
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.1rem;
-    }
-
-    .benefit-card {
-      min-height: 280px;
-      padding: 1.55rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .benefit-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 3rem;
-      border-radius: 12px;
-      background: var(--brand-soft);
-      color: var(--brand-dark);
-      font-size: 0.8rem;
-      font-weight: 800;
-    }
-
-    .benefit-card:nth-child(2) .benefit-number {
-      background: var(--green-soft);
-      color: var(--green);
-    }
-
-    .benefit-card:nth-child(3) .benefit-number {
-      background: #fff0f2;
-      color: var(--red);
-    }
-
-    .benefit-card h3 {
-      margin-bottom: 0.7rem;
-      font-size: 1.28rem;
-      letter-spacing: -0.025em;
-    }
-
-    .benefit-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.91rem;
     }
 
     .privacy-panel {
@@ -868,61 +534,6 @@
       height: 6px;
       border-radius: 50%;
       background: currentColor;
-    }
-
-    .bento-visual {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 2rem;
-    }
-
-    .capability {
-      padding: 0.48rem 0.68rem;
-      border: 1px solid #dcdde5;
-      border-radius: 9px;
-      background: #f7f7fb;
-      color: #505566;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.65rem;
-    }
-
-    .route-visual {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 2.4rem;
-    }
-
-    .route-node {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--brand);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 800;
-    }
-
-    .route-line {
-      position: relative;
-      height: 2px;
-      background: linear-gradient(90deg, var(--brand), #a5a8ed, var(--brand));
-    }
-
-    .route-line::after {
-      content: "Direct QUIC";
-      position: absolute;
-      top: -28px;
-      left: 50%;
-      color: var(--green);
-      font-size: 0.65rem;
-      font-weight: 750;
-      transform: translateX(-50%);
-      white-space: nowrap;
     }
 
     .portal-window {
@@ -1233,23 +844,6 @@
         max-width: 760px;
       }
 
-      .product-stage {
-        width: min(100%, 680px);
-        margin-inline: auto;
-      }
-
-      .benefit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .benefit-card {
-        min-height: auto;
-      }
-
-      .benefit-number {
-        margin-bottom: 1.7rem;
-      }
-
       .privacy-panel {
         grid-template-columns: 1fr;
       }
@@ -1304,23 +898,6 @@
       .hero-note {
         gap: 0.45rem 0.8rem;
         font-size: 0.72rem;
-      }
-
-      .app-window {
-        min-height: 450px;
-      }
-
-      .app-body {
-        min-height: 396px;
-        grid-template-columns: 1fr;
-      }
-
-      .app-sidebar {
-        display: none;
-      }
-
-      .security-toast {
-        right: 10px;
       }
 
       .section {
@@ -1388,10 +965,9 @@
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#product">Product</a>
         <a href="#privacy">Privacy</a>
         <a href="#how-it-works">How it works</a>
-        <a href="#operators">Supernodes</a>
+        <a href="#features">Features</a>
         <a href="#status">Status</a>
         <a href="#faq">FAQ</a>
         <a href="architecture.html">Architecture</a>
@@ -1444,104 +1020,48 @@
             <span>Open source</span>
           </div>
         </div>
-
-      </div>
-    </section>
-
-    <div class="shell trust-strip" aria-label="Core product characteristics">
-      <div class="trust-row">
-        <span>Built on open standards and auditable code</span>
-        <span class="trust-pill">Rust</span>
-        <span class="trust-pill">QUIC</span>
-        <span class="trust-pill">Ed25519</span>
-        <span class="trust-pill">AES-256-GCM</span>
-        <span class="trust-pill">Opus</span>
-        <span class="trust-pill">VP8</span>
-        <span class="trust-pill">Qt 6</span>
-      </div>
-    </div>
-
-    <section class="section section-white" id="product">
-      <div class="shell">
-        <div class="section-heading center">
-          <p class="eyebrow">A smaller trust surface</p>
-          <h2>Everything you need. Less infrastructure to trust.</h2>
-          <p class="section-lede">
-            DoubleSlash keeps identity and room ownership with participants while optional
-            supernodes help when networks or group features need them.
-          </p>
-        </div>
-
-        <div class="benefit-grid">
-          <article class="benefit-card">
-            <div class="benefit-number">01</div>
-            <h3>No accounts or central directory</h3>
-            <p>
-              Your Ed25519 identity is created locally. Meet people through signed,
-              expiring invites instead of searchable profiles or platform accounts.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">02</div>
-            <h3>Direct when possible</h3>
-            <p>
-              Peer sessions prefer direct QUIC, then work down an ordered list of
-              WebSocket candidates, then an optional supernode relay — all without
-              changing the feature model.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">03</div>
-            <h3>Features stay modular</h3>
-            <p>
-              Chat, audio, files, rooms, portals, and games are negotiated capabilities
-              with explicit trust tiers and quotas—not hidden side channels.
-            </p>
-          </article>
-        </div>
       </div>
     </section>
 
     <section class="section" id="privacy">
       <div class="shell privacy-panel">
         <div>
-          <p class="eyebrow">Privacy you can reason about</p>
-          <h2>Your conversations are not a supernode feature.</h2>
+          <p class="eyebrow">A smaller trust surface</p>
+          <h2>Less infrastructure to trust.</h2>
           <p class="section-lede">
-            Supernodes can assist with routing, membership, and ephemeral rooms. They
-            are not identity authorities and do not receive room content keys.
+            There is no account system and no directory. Optional supernodes help
+            when your network needs them &mdash; they never hold your identity or
+            your room keys.
           </p>
         </div>
 
         <div class="privacy-list">
           <div class="privacy-item">
-            <span class="privacy-check" aria-hidden="true">✓</span>
+            <span class="privacy-check" aria-hidden="true">&#10003;</span>
             <div>
-              <strong>Room content stays sealed</strong>
-              <p>Chat bodies, Opus audio, file chunks, and video frames are end-to-end encrypted under a per-room sender key.</p>
+              <strong>No accounts, no directory</strong>
+              <p>Your identity is created on your device. You meet people through signed, expiring invites &mdash; not searchable profiles.</p>
             </div>
           </div>
           <div class="privacy-item">
-            <span class="privacy-check" aria-hidden="true">✓</span>
+            <span class="privacy-check" aria-hidden="true">&#10003;</span>
             <div>
-              <strong>Room definitions stay client-owned</strong>
-              <p>Encrypted room definitions live with participants, not on the supernode.</p>
+              <strong>Conversations stay sealed</strong>
+              <p>Chat, voice, files, and video are encrypted end to end. A relay moves bytes it cannot read.</p>
             </div>
           </div>
           <div class="privacy-item">
-            <span class="privacy-check" aria-hidden="true">✓</span>
+            <span class="privacy-check" aria-hidden="true">&#10003;</span>
             <div>
-              <strong>Metadata is described honestly</strong>
-              <p>Relays may see peer IDs, room IDs, membership, timing, byte volumes, and camera on/off state.</p>
+              <strong>Metadata, described honestly</strong>
+              <p>A relay still sees peer and room IDs, who is connected, timing, and how much data moves.</p>
             </div>
           </div>
           <div class="privacy-item">
-            <span class="privacy-check" aria-hidden="true">✓</span>
+            <span class="privacy-check" aria-hidden="true">&#10003;</span>
             <div>
-              <strong>Third-party features ask first</strong>
-              <p>Non-core capability namespaces require explicit user consent.</p>
+              <strong>Nothing turns on quietly</strong>
+              <p>Features are agreed per connection, and anything outside the core set asks for your consent first.</p>
             </div>
           </div>
         </div>
@@ -1554,22 +1074,22 @@
           <p class="eyebrow">From zero to connected</p>
           <h2>Trust starts with an invite.</h2>
           <p class="section-lede">
-            No discovery service, account recovery flow, or public profile is required.
+            No sign-up, no profile, no discovery service.
           </p>
         </div>
 
         <div class="steps">
           <article class="step">
             <h3>Create your identity</h3>
-            <p>DoubleSlash generates an Ed25519 identity locally and stores key material through the OS keyring.</p>
+            <p>DoubleSlash generates a keypair on your device and stores it with your operating system.</p>
           </article>
           <article class="step">
             <h3>Share a signed invite</h3>
-            <p>Send a timestamped, expiry-checked <code>d://</code> invite through a channel you already trust.</p>
+            <p>Send an expiring <code>d://</code> invite through any channel you already trust.</p>
           </article>
           <article class="step">
-            <h3>Use the best available path</h3>
-            <p>DoubleSlash negotiates capabilities and connects directly or through an optional supernode you choose.</p>
+            <h3>Connect</h3>
+            <p>You connect directly when the network allows, or through a supernode you chose when it does not.</p>
           </article>
         </div>
       </div>
@@ -1581,69 +1101,34 @@
           <p class="eyebrow">Built for real groups</p>
           <h2>More than a private messenger.</h2>
           <p class="section-lede">
-            A native desktop client, a capability framework, and optional infrastructure
-            you can operate yourself. <a href="architecture.html">See the full architecture &rarr;</a>
+            A native desktop app, with optional infrastructure you can run yourself.
+            <a href="architecture.html">See the full architecture &rarr;</a>
           </p>
         </div>
 
         <div class="bento">
           <article class="bento-card large">
-            <h3>One session, negotiated features</h3>
+            <h3>Everything in one conversation</h3>
             <p>
-              Peers advertise typed capability sets after the handshake. Consumers use
-              only the shared intersection, with per-feature authorization and quotas.
+              Voice, chat, and file transfers run over the same connection, and
+              calls fall back to a private room rather than dropping when a direct
+              path is not available.
             </p>
-            <div class="bento-visual" aria-label="Example capability identifiers">
-              <span class="capability">core.chat.v1</span>
-              <span class="capability">core.audio.opus</span>
-              <span class="capability">room.audio.sfu</span>
-            </div>
           </article>
 
           <article class="bento-card medium">
-            <h3>Direct voice with a practical fallback</h3>
+            <h3>Rooms belong to the people in them</h3>
             <p>
-              Calls prefer direct QUIC. If that path is not ready within five seconds,
-              a temporary private SFU room can keep the call moving and upgrade later.
-            </p>
-            <div class="route-visual" aria-label="Direct peer-to-peer route">
-              <span class="route-node">A</span>
-              <span class="route-line"></span>
-              <span class="route-node">B</span>
-            </div>
-          </article>
-
-          <article class="bento-card third">
-            <h3>Client-owned rooms</h3>
-            <p>
-              Rooms and nested sub-rooms are defined on participant devices, up to 32
-              people each. Private rooms admit members by signed Merkle proof, so an
-              invited member can rejoin after the supernode's temporary state is gone.
-            </p>
-          </article>
-
-          <article class="bento-card third">
-            <h3>Local chat history</h3>
-            <p>
-              Conversation history and retention controls live on your device, with
-              delivery state and signature verification.
-            </p>
-          </article>
-
-          <article class="bento-card third">
-            <h3>Signed release updates</h3>
-            <p>
-              Tagged releases use an Ed25519-signed manifest and archive hash checks.
-              Development nightlies are clearly marked as unsigned.
+              Up to 32 people per room. The room is defined on participant devices,
+              so it survives a supernode going away.
             </p>
           </article>
 
           <article class="bento-card large">
-            <h3>Web experiences, inside the native trust boundary</h3>
+            <h3>Games and shared pages, inside the app</h3>
             <p>
-              Portal pages load through <code>d://</code> over an authenticated
-              QUIC stream. Games use the native <code>window.conquerd</code> bridge and
-              opaque <code>game.relay.v1</code> datagrams—there is no public game server.
+              Small multiplayer games and hosted pages open through <code>d://</code>
+              in the client itself &mdash; never on a public web server.
             </p>
             <div class="portal-window" aria-label="Illustrative in-app portal">
               <div class="portal-bar">d://supernode-id/games/</div>
@@ -1656,31 +1141,21 @@
           </article>
 
           <article class="bento-card medium">
-            <h3>Native audio, built for conversation</h3>
+            <h3>Your history stays yours</h3>
             <p>
-              Opus voice with loss recovery, speech enhancement, and noise
-              suppression built in — not a third-party plugin.
+              Conversation history and retention settings live on your device, not
+              in someone else&rsquo;s archive.
             </p>
-            <div class="bento-visual" aria-label="Audio pipeline features">
-              <span class="capability">libopus 1.6</span>
-              <span class="capability">DRED</span>
-              <span class="capability">OSCE</span>
-            </div>
           </article>
 
           <article class="bento-card wide">
             <p class="card-flag">In development</p>
             <h3>Video and screen sharing are being built in the open</h3>
             <p>
-              Camera and screen sharing run on the same sealed transport as
-              everything else — VP8 on every platform, Windows hardware H.264,
-              and shared audio kept in sync with the picture. It's real and
-              encrypted, but not finished. <a href="architecture.html">See exact platform coverage &rarr;</a>
+              Camera and screen sharing run encrypted on the same transport as
+              everything else, but they are not finished &mdash; coverage outside
+              Windows still needs work. <a href="architecture.html">See platform coverage &rarr;</a>
             </p>
-            <div class="bento-visual" aria-label="Video codecs">
-              <span class="capability">VP8</span>
-              <span class="capability">H.264 (Windows)</span>
-            </div>
           </article>
         </div>
 
@@ -1688,10 +1163,9 @@
           <div>
             <h3>Want to run the infrastructure?</h3>
             <p>
-              Host an optional supernode for QUIC relay, ephemeral SFU rooms, and
-              native in-app portal features. It assists your group without becoming
-              its identity authority or decrypting room content, and several nodes
-              can cluster together for resilience.
+              Host a supernode to give your group connectivity, shared rooms, and
+              in-app pages &mdash; without becoming its identity authority or being
+              able to read anything it carries.
             </p>
           </div>
           <a
@@ -1710,8 +1184,8 @@
           <p class="eyebrow">Where the project stands</p>
           <h2>Honest status, not a launch page.</h2>
           <p class="section-lede">
-            DoubleSlash is pre-release software built in public. Here is the short
-            version — <a href="architecture.html#status">see the architecture page for the full breakdown</a>.
+            DoubleSlash is pre-release software built in public.
+            <a href="architecture.html#status">See the full breakdown &rarr;</a>
           </p>
         </div>
 
@@ -1720,11 +1194,10 @@
             <p class="status-tag shipped">Working today</p>
             <h3>Shipped in the client</h3>
             <ul class="status-list">
-              <li>Local Ed25519 identity and signed <code>d://</code> invites</li>
-              <li>Direct chat and voice, with a fallback to a temporary private room</li>
-              <li>Rooms for up to 32 people: voice, chat, and files, sealed end to end</li>
-              <li>Supernode clusters that keep a room alive if one node goes down</li>
-              <li>In-app portal pages and multiplayer games</li>
+              <li>Signed <code>d://</code> invites and local identity</li>
+              <li>Direct chat, voice, and file transfer</li>
+              <li>Rooms for up to 32 people, sealed end to end</li>
+              <li>In-app pages and multiplayer games</li>
             </ul>
           </article>
 
@@ -1732,9 +1205,9 @@
             <p class="status-tag building">In progress</p>
             <h3>Being built now</h3>
             <ul class="status-list">
-              <li>Video calling and screen sharing — encrypted and working, but not a finished feature yet</li>
-              <li>Camera capture beyond Windows still needs real-hardware validation</li>
-              <li>Platform binary signing per release channel</li>
+              <li>Video calling and screen sharing</li>
+              <li>Camera support beyond Windows</li>
+              <li>Signed builds on every platform</li>
             </ul>
           </article>
 
@@ -1742,19 +1215,18 @@
             <p class="status-tag out">Not planned</p>
             <h3>Out of scope by design</h3>
             <ul class="status-list">
-              <li>Accounts, a user directory, or any discovery service</li>
-              <li>A supernode that can read room content or hold room keys</li>
-              <li>A public web surface — portal pages and games run only inside the native client</li>
-              <li>Telemetry, analytics, or tracking of any kind</li>
-              <li>Mandatory infrastructure: two reachable peers never need a supernode</li>
+              <li>Accounts, a user directory, or discovery</li>
+              <li>A supernode that can read your content</li>
+              <li>A public web version</li>
+              <li>Telemetry or analytics of any kind</li>
             </ul>
           </article>
         </div>
 
         <p class="status-note">
-          Desktop only for now — Windows, macOS, and Linux. Supernode discovery stays
-          invite-based on purpose. Builds come from the rolling nightly channel, which
-          ships SHA-256 sidecars and an intentionally unsigned development manifest.
+          Desktop only for now. Current builds come from the rolling nightly
+          channel, which ships SHA-256 sidecars and an intentionally unsigned
+          development manifest; tagged releases are signed.
         </p>
       </div>
     </section>
@@ -1764,85 +1236,48 @@
         <div class="section-heading center">
           <p class="eyebrow">The short answers</p>
           <h2>Frequently asked questions.</h2>
-          <p class="section-lede">Deeper technical detail lives on the <a href="architecture.html">architecture page</a>.</p>
+          <p class="section-lede">Deeper detail lives on the <a href="architecture.html">architecture page</a>.</p>
         </div>
 
         <div class="faq">
           <details>
-            <summary>Does DoubleSlash operate an account or identity server?</summary>
+            <summary>Can a supernode read my conversations?</summary>
             <p>
-              No. Identities are generated and stored locally. Optional supernodes can
-              assist with relay, membership, rooms, and hosted features, but they are not
-              identity authorities.
+              No. Chat, voice, and files are sealed end to end, and supernodes never
+              receive room keys. They do see routing metadata: peer and room IDs,
+              membership, timing, and byte volumes.
             </p>
           </details>
           <details>
-            <summary>Can a supernode read room conversations?</summary>
+            <summary>Do I need a supernode at all?</summary>
             <p>
-              No. Room chat bodies, Opus audio, and file chunks are end-to-end sealed.
-              A supernode still sees routing metadata such as peer IDs, room IDs,
-              membership, timing, signatures, and byte volumes.
+              Often not &mdash; two peers with open networks connect directly. A
+              supernode is there for when that fails, and for shared rooms, so you
+              do not need port forwarding to reach your people.
             </p>
           </details>
           <details>
             <summary>Can I make video calls yet?</summary>
             <p>
-              Not as a finished feature. Camera and screen paths exist and are
-              end-to-end encrypted, but coverage and validation outside Windows
-              are incomplete. Voice, chat, rooms, and files are what to rely on today.
+              Not as a finished feature. The camera and screen paths exist and are
+              encrypted, but coverage outside Windows is incomplete. Voice, chat,
+              rooms, and files are what to rely on today.
             </p>
           </details>
           <details>
-            <summary>How many people fit in a room, and what happens if a node goes down?</summary>
+            <summary>Can I use the games or pages in a normal browser?</summary>
             <p>
-              Up to 32 participants per room. A cluster of supernodes can keep a room
-              alive even if one node goes down. Rooms live in supernode memory only —
-              the authoritative definition stays on your device.
+              No. They run inside the native client through <code>d://</code>, and are
+              intentionally not exposed to the open web.
             </p>
           </details>
           <details>
-            <summary>Can I use the portal or games in a normal web browser?</summary>
+            <summary>Was this called ConquerD?</summary>
             <p>
-              No. Portal pages and games run inside the native client through
-              <code>d://</code> and the authenticated identity QUIC path. The
-              portal is intentionally not exposed as a public browser surface.
-            </p>
-          </details>
-          <details>
-            <summary>Why would I need access to a DoubleSlash supernode?</summary>
-            <p>
-              You may not — two peers with open firewalls connect directly over QUIC.
-              When that is not possible, a supernode gives you connectivity without
-              port forwarding. It is opaque to your content but still sees routing
-              metadata such as peer IDs and timing.
-            </p>
-          </details>
-          <details>
-            <summary>What happens when a direct connection fails?</summary>
-            <p>
-              DoubleSlash works down an ordered list of fallbacks, ending with a chosen
-              supernode's QUIC relay. Direct calls also have a temporary private-room
-              fallback while a direct path keeps trying to connect.
-            </p>
-          </details>
-          <details>
-            <summary>How are downloads and updates verified?</summary>
-            <p>
-              Tagged releases use an Ed25519-signed release manifest plus archive hash
-              verification. The rolling nightly channel uses SHA-256 sidecars and an
-              intentionally unsigned development manifest.
-            </p>
-          </details>
-          <details>
-            <summary>Wasn't this called ConquerD?</summary>
-            <p>
-              Yes. The project is now DoubleSlash, and the invite and portal protocol is
-              D:// — new links are minted as <code>d://</code>. Nothing on the wire
-              changed: existing <code>conquerd://</code> invites keep working, the client
-              still registers the old scheme with your operating system, and identities,
-              trusted peers, and saved rooms carry over. Some internal names
-              (crates, the portal bridge, relay paths) intentionally still read
-              <code>conquerd</code> so the network stays compatible.
+              Yes. The project is now DoubleSlash and new links are minted as
+              <code>d://</code>. Nothing on the wire changed: existing
+              <code>conquerd://</code> invites still work, and your identity, peers,
+              and saved rooms carry over.
             </p>
           </details>
         </div>
@@ -1852,10 +1287,6 @@
     <section class="final-cta">
       <div class="shell cta-panel">
         <h2>Your group. Your identity. Your path.</h2>
-        <p>
-          Try the current development build or explore the Rust source, protocol,
-          desktop client, and supernode implementation on GitHub.
-        </p>
         <div class="hero-actions">
           <a
             class="button button-primary"
@@ -1870,7 +1301,7 @@
             rel="noopener noreferrer"
           >Explore the source</a>
         </div>
-        <p class="cta-note">Development build. Platform signing may vary; verify the published SHA-256 sidecar.</p>
+        <p class="cta-note">Development build. Verify the published SHA-256 sidecar.</p>
       </div>
     </section>
   </main>
@@ -1884,11 +1315,9 @@
         <p class="footer-copy">Open-source, invite-only peer connectivity. MIT licensed.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#privacy">Privacy</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#status">Status</a>
-        <a href="#faq">FAQ</a>
         <a href="architecture.html">Architecture</a>
+        <a href="https://github.com/ConquerD/DoubleSlash/blob/develop/PRIVACY.md">Privacy policy</a>
+        <a href="https://github.com/ConquerD/DoubleSlash/blob/develop/TERMS.md">Terms</a>
         <a href="https://github.com/ConquerD/DoubleSlash/releases">Releases</a>
         <a href="https://github.com/ConquerD/DoubleSlash">GitHub</a>
       </nav>
