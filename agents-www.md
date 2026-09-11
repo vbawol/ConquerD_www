@@ -7,6 +7,7 @@
 | File | Purpose |
 |---|---|
 | `index.html` | All public page content, metadata, inline diagrams, and small interaction scripts |
+| `architecture.html` | Technical architecture reference |
 | `styles.css` | Site layout, typography, responsive behavior, and visual styling |
 | `logo.svg`, `logo-full.svg`, `logo.png`, `logo_padding.png`, `favicon.ico` | Brand assets (the D:// mark) |
 | `CNAME` | Custom-domain configuration |
@@ -139,6 +140,7 @@ The local website `README.md` describes the retired Python application, eight-pa
 - Do not imply that a supernode can decrypt room chat, audio, or file content.
 - Do not publish hard-coded test or capability counts without a maintained derivation and validation step.
 - Do not add new pages, frameworks, dependencies, build tooling, or deployment services unless the task calls for them.
+- The privacy policy is `../PRIVACY.md` in the product repository, not a second copy on this site. Footer and nav “Privacy policy” links must point at `https://github.com/ConquerD/DoubleSlash/blob/develop/PRIVACY.md`. Terms of use are `../TERMS.md` at the same GitHub blob URL. Do not fork either into HTML unless Play or a regulator requires a same-origin page.
 - Use relative paths for local assets and preserve the canonical production URL in metadata.
 - Preserve unrelated user changes and keep website-only work scoped to `ConquerD_www/`.
 
